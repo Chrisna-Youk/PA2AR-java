@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<fx:root type="VBox" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+         spacing="8" prefWidth="320" styleClass="food-card">
+    <!-- Image -->
+    <StackPane styleClass="card-surface">
+        <ImageView fx:id="photo" fitHeight="160" preserveRatio="true" smooth="true" visible="false"/>
+        <Label fx:id="photoPlaceholder" text="PHOTO DU FOODTRUCK" styleClass="photo-placeholder"/>
+        <padding><Insets top="8" right="8" bottom="8" left="8"/></padding>
+    </StackPane>
+
+    <!-- Détails -->
+    <GridPane hgap="8" vgap="8" styleClass="card-surface">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="120"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <Label text="Nom du foodtruck :" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <Label fx:id="nameLabel" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Localisation :" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <Label fx:id="locationLabel" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Spécialité :" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <Label fx:id="specialtyLabel" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Prix :" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <Label fx:id="priceLabel" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <padding><Insets top="8" right="8" bottom="8" left="8"/></padding>
+    </GridPane>
+
+    <padding><Insets top="8" right="8" bottom="8" left="8"/></padding>
+</fx:root>
