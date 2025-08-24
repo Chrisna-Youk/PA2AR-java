@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Chinese foodNtruck",
+    "city": "Paris",
+    "postal": "75001",
+    "type": "Asiatique",
+    "price": "€€€€",
+    "image": "/images/truck1.jpg"
+  },
+  {
+    "name": "Pizza Wheels",
+    "city": "Lyon",
+    "postal": "69002",
+    "type": "Italien",
+    "price": "€",
+    "image": "/images/truck1.jpg"
+  },
+  {
+    "name": "Taco Mobile",
+    "city": "Marseille",
+    "postal": "13001",
+    "type": "Mexicain",
+    "price": "€€€",
+    "image": "/images/truck1.jpg"
+  }
+]

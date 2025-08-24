@@ -7,4 +7,8 @@ module org.dnc {
 
     exports org.dnc.ui;
     opens org.dnc.ui to javafx.fxml;
+
+    requires com.fasterxml.jackson.databind;
+    opens org.dnc.model to com.fasterxml.jackson.databind;
+
 }

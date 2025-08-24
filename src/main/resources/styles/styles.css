@@ -21,3 +21,29 @@
     -fx-font-size: 14px;
 }
 .title { -fx-font-size: 18px; -fx-font-weight: bold; }
+
+
+.title { -fx-font-size: 18px; -fx-font-weight: bold; }
+.tab-pane { -fx-padding: 8; }
+
+
+.title { -fx-font-size: 18px; -fx-font-weight: bold; }
+.table-view { -fx-background-insets: 0; }
+.titled-pane > .title { -fx-font-weight: bold; }
+
+
+/* Carte fidélité */
+.loyalty-card {
+    -fx-background-color: #dddddd;
+    -fx-background-radius: 8;
+    -fx-padding: 16;
+}
+.avatar-placeholder {
+    -fx-background-color: #2e7dac;
+    -fx-background-radius: 6;
+}
+.loyalty-line { -fx-font-size: 14px; }
+
+
+.food-card { -fx-cursor: hand; }
+.food-card:hover .card-surface { -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 10, 0, 0, 4); }

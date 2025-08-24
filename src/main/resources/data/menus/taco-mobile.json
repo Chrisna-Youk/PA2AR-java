@@ -1,0 +1,5 @@
+[
+  { "name": "Tacos boeuf", "price": "7.50 €", "description": "Boeuf mariné, pico de gallo", "image": "" },
+  { "name": "Tacos veggie", "price": "7.00 €", "description": "Haricots noirs, maïs, guac", "image": "" },
+  { "name": "Tacos poisson", "price": "7.00 €", "description": "Asperges, maïs, épinards", "image": "" }
+]

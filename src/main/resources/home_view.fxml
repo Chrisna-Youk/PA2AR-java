@@ -8,48 +8,41 @@
 <BorderPane xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="org.dnc.HomeController"
-            prefWidth="900.0" prefHeight="600.0">
+            prefWidth="1000.0" prefHeight="650.0">
 
     <top>
         <ToolBar>
-            <Label text="Home" styleClass="title"/>
+            <Label text="DnC" styleClass="title"/>
             <Pane HBox.hgrow="ALWAYS"/>
             <Button text="Logout" onAction="#onLogout"/>
         </ToolBar>
     </top>
 
     <center>
-        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
-            <content>
-                <TilePane fx:id="cardsPane" hgap="24" vgap="24" prefColumns="3">
-                    <padding><Insets topRightBottomLeft="20"/></padding>
+        <TabPane fx:id="tabPane">
+            <!-- Onglet 1 : Événements -->
+            <Tab text="Événements" closable="false">
+                <fx:include source="/events_view.fxml"/>
+            </Tab>
 
-                    <FoodTruckCard
-                            name="Chinese foodNtruck"
-                            location="Paris 75001"
-                            specialty="Asiatique"
-                            price="€€"
-                            imageUrl="/images/truck1.jpg"/>
+            <!-- Onglet 2 : MaCarte -->
+            <Tab text="MaCarte" closable="false">
+                <fx:include source="/loyalty_view.fxml"/>
+            </Tab>
 
-                    <FoodTruckCard
-                            name="Pizza Wheels"
-                            location="Lyon 69002"
-                            specialty="Italien"
-                            price="€"
-                            imageUrl="/images/truck1.jpg"/>
-
-                    <FoodTruckCard
-                            name="Taco Mobile"
-                            location="Marseille 13001"
-                            specialty="Mexicain"
-                            price="€€€"
-                            imageUrl="/images/truck1.jpg"/>
-                </TilePane>
-            </content>
-        </ScrollPane>
+            <!-- Onglet 3 : Les Foodtrucks -->
+            <Tab text="Les Foodtrucks" closable="false">
+                <ScrollPane fx:id="trucksScroll" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+                    <content>
+                        <TilePane fx:id="cardsPane" hgap="24" vgap="24" prefColumns="3">
+                            <padding><Insets topRightBottomLeft="20"/></padding>
+                            <!-- Laisse vide : le contrôleur ajoute les FoodTruckCard dynamiquement -->
+                        </TilePane>
+                    </content>
+                </ScrollPane>
+            </Tab>
+        </TabPane>
     </center>
 
-    <padding>
-        <Insets topRightBottomLeft="16"/>
-    </padding>
+    <padding><Insets topRightBottomLeft="12"/></padding>
 </BorderPane>

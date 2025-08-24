@@ -10,11 +10,11 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        // Charge la page login
+        // Page login
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/login_view.fxml"));
         Parent root = loader.load();
 
-        // Appel le Login Controller
+        // Login Controller
         LoginController controller = loader.getController();
         controller.setHostServices(getHostServices());
 

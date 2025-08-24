@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <padding><Insets topRightBottomLeft="16"/></padding>
+
+    <!-- Carte FIXE 600x400 -->
+    <BorderPane styleClass="loyalty-card"
+                prefWidth="600" prefHeight="400"
+                minWidth="600"  minHeight="400"
+                maxWidth="600"  maxHeight="400">
+
+        <center>
+            <HBox spacing="16">
+                <StackPane prefWidth="140" prefHeight="160"
+                           minWidth="140"  minHeight="160"
+                           maxWidth="140"  maxHeight="160">
+                    <Region styleClass="avatar-placeholder"
+                            prefWidth="140" prefHeight="160"
+                            minWidth="140"  minHeight="160"
+                            maxWidth="140"  maxHeight="160"/>
+                    <Label text="Photo de profil"/>
+                </StackPane>
+
+                <!-- Infos -->
+                <VBox spacing="8">
+                    <Label text="Nom : Amen"   styleClass="loyalty-line"/>
+                    <Label text="Prénom : Jesus" styleClass="loyalty-line"/>
+                </VBox>
+            </HBox>
+        </center>
+
+        <bottom>
+            <HBox spacing="8">
+                <Label text="Date de création : 2025-01-15" styleClass="loyalty-line"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="Nb points : 120" styleClass="loyalty-line"/>
+            </HBox>
+        </bottom>
+
+        <padding><Insets topRightBottomLeft="16"/></padding>
+    </BorderPane>
+</StackPane>
