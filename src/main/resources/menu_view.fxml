@@ -5,20 +5,10 @@
 <?import javafx.scene.layout.*?>
 
 <VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="org.dnc.MenuController"
-      spacing="12.0">
+      fx:controller="org.dnc.MenuController" spacing="12.0">
     <padding><Insets topRightBottomLeft="16"/></padding>
 
     <Label fx:id="titleLabel" text="Menu" styleClass="title"/>
 
-    <TableView fx:id="menuTable" VBox.vgrow="ALWAYS">
-        <columns>
-            <TableColumn fx:id="colName" text="Produit" prefWidth="220.0"/>
-            <TableColumn fx:id="colPrice" text="Prix" prefWidth="100.0"/>
-            <TableColumn fx:id="colDesc" text="Description" prefWidth="360.0"/>
-        </columns>
-        <placeholder>
-            <Label text="Aucun item."/>
-        </placeholder>
-    </TableView>
+    <ListView fx:id="menuList" VBox.vgrow="ALWAYS"/>
 </VBox>

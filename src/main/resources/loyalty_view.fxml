@@ -2,45 +2,82 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
-    <padding><Insets topRightBottomLeft="16"/></padding>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.dnc.LoyaltyController"
+      spacing="12" alignment="TOP_CENTER" fillWidth="false">
 
-    <!-- Carte FIXE 600x400 -->
-    <BorderPane styleClass="loyalty-card"
-                prefWidth="600" prefHeight="400"
-                minWidth="600"  minHeight="400"
-                maxWidth="600"  maxHeight="400">
+    <!-- PDF -->
+    <HBox alignment="CENTER_RIGHT" prefWidth="800">
+        <Button text="Télécharger PDF" onAction="#onDownloadPdf"/>
+    </HBox>
 
+    <BorderPane fx:id="cardRoot" styleClass="loyalty-card"
+                prefWidth="800" prefHeight="500"
+                minWidth="800"  minHeight="500"
+                maxWidth="800"  maxHeight="500">
+
+        <top>
+            <BorderPane>
+                <left>
+                    <HBox spacing="12" alignment="CENTER_LEFT">
+                        <!-- Pp -->
+                        <StackPane prefWidth="120" prefHeight="120"
+                                   maxWidth="120" maxHeight="120">
+                            <ImageView fx:id="avatarImage"
+                                       fitWidth="120" fitHeight="120"
+                                       preserveRatio="true"
+                                       visible="false" managed="false"/>
+                            <Label fx:id="avatarPlaceholder" text="Photo de profil"/>
+                        </StackPane>
+
+                        <!-- Nom/Prénom -->
+                        <VBox spacing="6" alignment="CENTER_LEFT">
+                            <Label fx:id="lastNameLabel"  text="Nom :"    styleClass="card-title"/>
+                            <Label fx:id="firstNameLabel" text="Prénom :" styleClass="card-title"/>
+                        </VBox>
+                    </HBox>
+                </left>
+
+                <!-- Logo -->
+                <right>
+                    <ImageView fitWidth="120" fitHeight="120" preserveRatio="true">
+                        <!-- chemin du logo depuis /resources -->
+                        <image>
+                            <Image url="@images/dnc.png"/>
+                        </image>
+                    </ImageView>
+                </right>
+
+                <padding><Insets top="10" right="12" bottom="0" left="12"/></padding>
+            </BorderPane>
+        </top>
+
+        <!-- QR code -->
         <center>
-            <HBox spacing="16">
-                <StackPane prefWidth="140" prefHeight="160"
-                           minWidth="140"  minHeight="160"
-                           maxWidth="140"  maxHeight="160">
-                    <Region styleClass="avatar-placeholder"
-                            prefWidth="140" prefHeight="160"
-                            minWidth="140"  minHeight="160"
-                            maxWidth="140"  maxHeight="160"/>
-                    <Label text="Photo de profil"/>
-                </StackPane>
-
-                <!-- Infos -->
-                <VBox spacing="8">
-                    <Label text="Nom : Amen"   styleClass="loyalty-line"/>
-                    <Label text="Prénom : Jesus" styleClass="loyalty-line"/>
-                </VBox>
-            </HBox>
+            <StackPane alignment="CENTER">
+                <ImageView fx:id="qrImage"
+                           fitWidth="300" fitHeight="300"
+                           preserveRatio="true"/>
+            </StackPane>
         </center>
 
         <bottom>
-            <HBox spacing="8">
-                <Label text="Date de création : 2025-01-15" styleClass="loyalty-line"/>
+            <HBox spacing="8" alignment="CENTER_LEFT">
+                <Label fx:id="createdLabel" text="Date de création :" styleClass="card-meta"/>
                 <Region HBox.hgrow="ALWAYS"/>
-                <Label text="Nb points : 120" styleClass="loyalty-line"/>
+                <Label fx:id="pointsLabel"  text="Nb points :" styleClass="card-meta"/>
+                <padding><Insets top="8" right="12" bottom="8" left="12"/></padding>
             </HBox>
         </bottom>
 
-        <padding><Insets topRightBottomLeft="16"/></padding>
+        <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
     </BorderPane>
-</StackPane>
+
+    <HBox spacing="16" alignment="CENTER">
+        <Button text="promo -10%" onAction="#onPromo10"/>
+        <Button text="promo -20%" onAction="#onPromo20"/>
+    </HBox>
+</VBox>

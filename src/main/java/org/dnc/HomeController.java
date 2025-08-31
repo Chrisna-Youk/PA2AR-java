@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
-import javafx.scene.Scene; // (utile si tu fais d'autres choses)
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -33,9 +32,9 @@ public class HomeController {
 
     @FXML private TabPane tabPane;
     @FXML private TilePane cardsPane;
-    @FXML private ScrollPane trucksScroll;   // <-- ajouté
+    @FXML private ScrollPane trucksScroll;
 
-    private Node listContent;                // on mémorise la vue “liste”
+        private Node listContent;
     private HostServices hostServices;
     void setHostServices(HostServices hostServices) { this.hostServices = hostServices; }
 
@@ -142,7 +141,6 @@ public class HomeController {
         }
     }
 
-    /** "Pizza Wheels" -> "pizza-wheels" (pour retrouver le fichier JSON du menu). */
     // Fonction qui permet de formater le nom du foodtruck afin de retrouver le JSON
     // Sera surement mené à être supprimé/modifié pour les call API
     private String slugify(String input) {
@@ -156,6 +154,7 @@ public class HomeController {
     @FXML
     private void onLogout(ActionEvent event) {
         try {
+            Session.clear();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/login_view.fxml"));
             Parent loginRoot = loader.load();
             LoginController loginController = loader.getController();

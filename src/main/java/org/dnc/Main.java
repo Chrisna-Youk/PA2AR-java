@@ -7,9 +7,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    @Override
+        @Override
     public void start(Stage stage) throws Exception {
 
+        // Main logo
+        stage.getIcons().add(
+                new javafx.scene.image.Image(
+                        getClass().getResource("/images/dnc.png").toExternalForm()
+                )
+        );
         // Page login
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/login_view.fxml"));
         Parent root = loader.load();
@@ -18,7 +24,9 @@ public class Main extends Application {
         LoginController controller = loader.getController();
         controller.setHostServices(getHostServices());
 
-        Scene scene = new Scene(root, 480, 360);
+        Scene scene = new Scene(root, 780, 600);
+        stage.setMinWidth(780);
+        stage.setMinHeight(600);
 
         // CSS
         scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
