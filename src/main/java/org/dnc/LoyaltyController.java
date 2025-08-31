@@ -87,7 +87,7 @@ public class LoyaltyController {
         String photo = u.getPhoto();
         if (photo != null && !photo.isBlank()) {
             try {
-                String url = photo.startsWith("http") ? photo : getClass().getResource(photo).toExternalForm();
+                String url = photo.startsWith("https") ? photo : getClass().getResource(photo).toExternalForm();
                 avatarImage.setImage(new Image(url, true));
                 showPlaceholder(false);
             } catch (Exception e) {
@@ -185,7 +185,7 @@ public class LoyaltyController {
             HttpClient client = HttpClient.newHttpClient();
             String json = "{\"amount\":" + amount + "}"; // adapte si ton backend attend un autre payload
 
-            HttpRequest req = HttpRequest.newBuilder(URI.create("http://localhost:3001/api/v1/users/promocode"))
+            HttpRequest req = HttpRequest.newBuilder(URI.create("https://drivencook.cloud/api/v1/users/promocode"))
                     .header("Content-Type", "application/json")
                     .header("Authorization", "Bearer " + bearerToken)
                     .POST(HttpRequest.BodyPublishers.ofString(json))

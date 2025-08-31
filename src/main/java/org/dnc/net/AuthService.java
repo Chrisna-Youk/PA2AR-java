@@ -11,7 +11,8 @@ import java.util.concurrent.CompletableFuture;
 
 public final class AuthService {
     // URL de ton API
-    private static final String AUTH_URL = "http://127.0.0.1:3001/api/v1/auth/access";
+    private static final String AUTH_URL = "https://drivencook.cloud/api/v1/auth/access";
+    //private static final String AUTH_URL = "http://127.0.0.1:3001/api/v1/auth/access";
 
     private static final HttpClient CLIENT = HttpClient.newBuilder()
             .version(HttpClient.Version.HTTP_1_1)

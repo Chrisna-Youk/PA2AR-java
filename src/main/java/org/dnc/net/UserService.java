@@ -10,7 +10,7 @@ import java.time.Duration;
 import java.util.concurrent.CompletableFuture;
 
 public final class UserService {
-    private static final String BASE = "http://localhost:3001/api/v1";
+    private static final String BASE = "https://drivencook.cloud/api/v1";
     private static final HttpClient CLIENT = HttpClient.newBuilder()
             .version(HttpClient.Version.HTTP_1_1)
             .connectTimeout(Duration.ofSeconds(5))
